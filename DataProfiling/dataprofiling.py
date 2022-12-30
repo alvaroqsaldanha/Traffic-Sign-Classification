@@ -17,7 +17,7 @@ train_data = []
 train_labels = []
 test_data = []
 
-label_json = codecs.open("DataProfiling/label_names.json", 'r', encoding='utf-8').read()
+label_json = codecs.open("label_names.json", 'r', encoding='utf-8').read()
 label_names = json.loads(label_json)
 
 # Loading Training Data

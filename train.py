@@ -1,8 +1,9 @@
 from model import TrafficSignCNN
-from torch import optim, nn
+from torch import optim, nn, save
 from sklearn.metrics import accuracy_score
 import torchvision.transforms as transforms
 from matplotlib.pyplot import Axes, gca, figure, savefig
+import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 import pickle
 
@@ -25,7 +26,7 @@ def train(model, train_set, opt, criterion):
 num_classes = 43
 batch_size = 256
 learning_rate = 0.001
-EPOCHS = 15
+EPOCHS = 5
 
 model = TrafficSignCNN(num_classes)
 
@@ -46,12 +47,18 @@ for epoch in range(EPOCHS):
     print(train_ls)
     print(train_acc)
 
-ax = gca()
-ax.set_title('Loss over time')
-ax.set_xlabel('Epoch')
-ax.set_ylabel('Loss')
-ax.set_xlim(0, EPOCHS)
-ax.set_xticks([i for i in range(EPOCHS)])
-legend: list = []
-ax.plot([1 in range(EPOCHS+1)], train_loss)
-legend.append('Loss')
+save(model.state_dict(), "serialized_data/model.pt")
+
+_, axs = plt.subplots(1, 2, figsize=(12, 6))
+
+axs[0].plot(train_loss, label="train")
+axs[0].set_title("Loss over time")
+axs[0].set_xlabel("Epochs")
+axs[0].set_ylabel("Loss")
+legend = axs[0].legend(loc='upper right')
+axs[1].plot(train_accuracy, label="train")
+axs[1].set_title("Accuracy over time")
+axs[1].set_xlabel("Epochs")
+axs[1].set_ylabel("Accuracy")
+legend = axs[1].legend(loc='center right')
+plt.show()
