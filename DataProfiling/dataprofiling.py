@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from tqdm import tqdm
 import random
+import pickle
 import os
 import codecs, json
 
@@ -16,7 +17,7 @@ train_data = []
 train_labels = []
 test_data = []
 
-label_json = codecs.open("label_names.json", 'r', encoding='utf-8').read()
+label_json = codecs.open("DataProfiling/label_names.json", 'r', encoding='utf-8').read()
 label_names = json.loads(label_json)
 
 # Loading Training Data
@@ -61,23 +62,19 @@ for i, index in enumerate(random_idxs):
     a.set_title(label_names[str(train_labels[index]+1)])
 plt.show()
 
+fig, ax = plt.subplots()
+values, bins, patches = ax.hist(train_labels, num_classes)
+ax.set_xlabel('Class')
+ax.set_title('Class distribution')
+plt.show()
+
 # Serializing data
 if not os.path.exists(os.getcwd() + os.sep + "serialized_data/"):
     os.makedirs(os.getcwd() + os.sep + "serialized_data/")
 
-json.dump(train_data.tolist(), codecs.open("serialized_data/train_serialized.json", 'w', encoding='utf-8'), 
-          separators=(',', ':'), 
-          sort_keys=True, 
-          indent=4) 
-json.dump(train_labels.tolist(), codecs.open("serialized_data/trainlabels_serialized.json", 'w', encoding='utf-8'), 
-          separators=(',', ':'), 
-          sort_keys=True, 
-          indent=4) 
-json.dump(test_data.tolist(), codecs.open("serialized_data/test_serialized.json", 'w', encoding='utf-8'), 
-          separators=(',', ':'), 
-          sort_keys=True, 
-          indent=4) 
-
+pickle.dump(train_data, open("serialized_data/train_data_numpy", "wb"))
+pickle.dump(test_data, open("serialized_data/test_data_numpy", "wb"))
+pickle.dump(train_labels, open("serialized_data/train_labels_numpy", "wb"))
 
 
 

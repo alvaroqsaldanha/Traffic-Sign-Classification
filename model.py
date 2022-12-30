@@ -23,9 +23,9 @@ class TrafficSignCNN(nn.Module):
         )
         
         self.classification = nn.Sequential(
+            nn.Dropout(0.5),
             nn.Linear(16*256, 600),
             nn.ReLU(inplace=True),
-            nn.Dropout(0.3),
             nn.Linear(in_features=600, out_features=256),
             nn.ReLU(inplace=True),
             nn.Linear(256, num_classes)
@@ -33,6 +33,6 @@ class TrafficSignCNN(nn.Module):
         
     def forward(self, x):
         X = self.conv(x)
-        X = x.view(X.shape[0], -1)
+        X = X.view(X.shape[0], -1)
         Y = self.classification(X)
-        return x, Y
+        return Y
