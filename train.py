@@ -7,18 +7,18 @@ import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 import pickle
 
-def train(model, train_set, opt, criterion):
+def train(model, train_set, optimizer, criterion):
     epoch_ls = 0
     epoch_acc = 0
     model.train()
     for batch_idx, (x, y) in enumerate(train_set):
-        opt.zero_grad()
+        optimizer.zero_grad()
         y_pred= model(x)
         loss = criterion(y_pred,y)
         loss.backward()
         final_pred = y_pred.argmax(axis=1)
         accuracy = accuracy_score(final_pred,y)
-        opt.step()
+        optimizer.step()
         epoch_ls += loss.item()
         epoch_acc += accuracy
     return epoch_ls / len(train_set), epoch_acc / len(train_set)
@@ -50,7 +50,6 @@ for epoch in range(EPOCHS):
 save(model.state_dict(), "serialized_data/model.pt")
 
 _, axs = plt.subplots(1, 2, figsize=(12, 6))
-
 axs[0].plot(train_loss, label="train")
 axs[0].set_title("Loss over time")
 axs[0].set_xlabel("Epochs")

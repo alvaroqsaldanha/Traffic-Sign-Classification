@@ -32,3 +32,5 @@ print(f"Incorrectly classified images: {len(test_set)-y_right}")
 print(f"Final Model Accuracy: {y_right/len(test_set)}")
 print(classification_report(true_labels,pred_labels))
 
+
+
