@@ -26,7 +26,7 @@ def train(model, train_set, optimizer, criterion):
 num_classes = 43
 batch_size = 256
 learning_rate = 0.001
-EPOCHS = 5
+EPOCHS = 15
 
 model = TrafficSignCNN(num_classes)
 
