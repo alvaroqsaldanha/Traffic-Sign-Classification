@@ -24,6 +24,7 @@ class TrafficSignCNN(nn.Module):
             nn.Dropout(0.5),
             nn.Linear(16*256, 600),
             nn.ReLU(inplace=True),
+            nn.Dropout(0.5),
             nn.Linear(in_features=600, out_features=256),
             nn.ReLU(inplace=True),
             nn.Linear(256, num_classes)
