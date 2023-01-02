@@ -18,4 +18,17 @@ Deploy a web-app, using Flask or Django, that allows the user to upload an image
 
 The GTSRB dataset (German Traffic Sign Recognition Benchmark) has images pertaining to 43 classes of traffic signs, containing 39,209 train examples and 12,630 test ones. It was provided by the [Institut für Neuroinformatik](https://benchmark.ini.rub.de/?section=gtsrb&subsection=news) in 2011. In the [classification demo notebook](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/demo.ipynb), data profiling is done to help visualize the dataset.
 
+## Depedencies:
+
+> pandas <br>
+> numpy <br>
+> PyTorch <br>
+> matplotlib <br>
+> Pillow <br>
+> scikit-learn <br>
+> pickle <br>
+> torchvision <br>
+
+
+
 
