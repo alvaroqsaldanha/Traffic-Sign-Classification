@@ -19,6 +19,7 @@ class GTRSBDataset(Dataset):
         img_path = os.path.join(self.root_dir, self.annotations.iloc[index, 7])
         image = cv2.imread(img_path)
         image = cv2.resize(image,(32,32))
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         y_label = torch.tensor(int(self.annotations.iloc[index, 6]))
         if self.transform:
             image = self.transform(image)
