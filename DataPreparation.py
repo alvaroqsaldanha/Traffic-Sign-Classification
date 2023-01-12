@@ -30,7 +30,7 @@ train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True
 pickle.dump(train_loader, open("serialized_data/train_data_loader", "wb"))
 
 test_set = GTRSBDataset('data/test.csv','data',transform=transforms.ToTensor()) 
-test_loader = DataLoader(dataset=test_set, batch_size=1, shuffle=True)
+test_loader = DataLoader(dataset=test_set, batch_size=1, shuffle=False)
 pickle.dump(test_loader, open("serialized_data/test_data_loader", "wb"))
 
 train_set_clahe = GTRSBDataset('data/train.csv','data',transform=clahe_transforms) 
@@ -38,5 +38,5 @@ train_loader_clahe = DataLoader(dataset=train_set_clahe, batch_size=64, shuffle=
 pickle.dump(train_loader_clahe, open("serialized_data/train_data_loader_clahe", "wb"))
 
 test_set_clahe = GTRSBDataset('data/test.csv','data',transform=clahe_transforms) 
-test_loader_clahe = DataLoader(dataset=test_set_clahe, batch_size=1, shuffle=True)
+test_loader_clahe = DataLoader(dataset=test_set_clahe, batch_size=1, shuffle=False)
 pickle.dump(test_loader_clahe, open("serialized_data/test_data_loader_clahe", "wb"))
