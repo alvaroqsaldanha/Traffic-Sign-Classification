@@ -25,6 +25,8 @@ clahe_transforms = transforms.Compose([
 if not os.path.exists(os.getcwd() + os.sep + "serialized_data/"):
     os.makedirs(os.getcwd() + os.sep + "serialized_data/")
 
+## CNN DATASETS
+
 train_set = GTRSBDataset('data/train.csv','data',transform=transforms.ToTensor()) 
 train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True)
 pickle.dump(train_loader, open("serialized_data/train_data_loader", "wb"))
@@ -32,6 +34,18 @@ pickle.dump(train_loader, open("serialized_data/train_data_loader", "wb"))
 test_set = GTRSBDataset('data/test.csv','data',transform=transforms.ToTensor()) 
 test_loader = DataLoader(dataset=test_set, batch_size=1, shuffle=False)
 pickle.dump(test_loader, open("serialized_data/test_data_loader", "wb"))
+
+## ViT DATASETS
+
+train_set_vit = GTRSBDataset('data/train.csv','data',img_size=128,transform=transforms.ToTensor()) 
+train_loader_vit = DataLoader(dataset=train_set_vit, batch_size=batch_size, shuffle=True)
+pickle.dump(train_loader_vit, open("serialized_data/train_data_loader_vit", "wb"))
+
+test_set_vit = GTRSBDataset('data/test.csv','data',img_size=128,transform=transforms.ToTensor()) 
+test_loader_vit = DataLoader(dataset=test_set_vit, batch_size=1, shuffle=False)
+pickle.dump(test_loader_vit, open("serialized_data/test_data_loader_vit", "wb"))
+
+## CLAHE DATASETS
 
 train_set_clahe = GTRSBDataset('data/train.csv','data',transform=clahe_transforms) 
 train_loader_clahe = DataLoader(dataset=train_set_clahe, batch_size=64, shuffle=True)
