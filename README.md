@@ -6,7 +6,7 @@ There are three main components planned for this project:
 1) Traffic Sign Classification - in development <br />
 Develop a model that, given any RGB image of a traffic sign, can classify it into 1 of 43 possible classes.
 
-    The [classification demo notebook](https://alvaroqsaldanha.github.io/Traffic-Sign-Classification/) showcases examples of predictions made with       the current model, and provides a walkthrough of multiple development steps, including data preparation, training, and testing of the model.
+    The [classification demo notebook](https://alvaroqsaldanha.github.io/Traffic-Sign-Classification/) showcases examples of predictions made with       the current model, and provides a walkthrough of multiple development steps, including data preparation, training, and testing of the model. The next step in development will be to implement a transformer model, to compare it to the current CNN.
 
 2) Traffic Sign Detection - in development <br /> 
 Develop another model that, given an image, detects the presence of a traffic sign and give its pixel coordinates, allowing for posterior classification.
