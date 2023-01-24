@@ -7,6 +7,10 @@ There are three main components planned for this project:
 Develop a model that, given any RGB image of a traffic sign, can classify it into 1 of 43 possible classes.
 
     The [classification demo notebook](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/demo.ipynb) showcases examples of predictions made with       the CNN and the Transformer, and provides a walkthrough of multiple development steps, including data preparation, training, and testing of the model. The next step in development will be to compare the Transformer to the CNN.
+    
+    Some examples of predictions using the CNN:
+    
+    ![Example of predictions](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/DataProfiling/templateimg.PNG)
 
 2) Traffic Sign Detection - in development <br /> 
 Develop another model that, given an image, detects the presence of a traffic sign and give its pixel coordinates, allowing for posterior classification.
