@@ -11,6 +11,10 @@ Develop a model that, given any RGB image of a traffic sign, can classify it int
     Some examples of predictions using the CNN:
     
     ![Example of predictions](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/DataProfiling/templateimg.PNG)
+    
+    CNN vs Current Vision Transformer Model Comparison - Accuracy and Loss over Epochs:
+    
+    ![Comparison Between Models](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/DataProfiling/templateimgComparison.PNG)
 
 2) Traffic Sign Detection - in development <br /> 
 Develop another model that, given an image, detects the presence of a traffic sign and give its pixel coordinates, allowing for posterior classification. Currently, I plan to use a Yolo-based approach to this section.
