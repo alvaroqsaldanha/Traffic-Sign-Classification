@@ -1,10 +1,10 @@
 # Traffic-Sign-Classification
 A deep-learning traffic sign detection and recognition project, using  convolutional neural networks, with PyTorch over the [GTSRB - German Traffic Sign](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign?resource=download). 
 
-There are three main components planned for this project:
+There are three main components currently planned for this project:
 
 1) Traffic Sign Classification - in development <br />
-Develop a model that, given any RGB image of a traffic sign, can classify it into 1 of 43 possible classes.
+A model that, given any RGB image of a traffic sign, can classify it into 1 of 43 possible classes.
 
     The [classification demo notebook](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/demo.ipynb) showcases examples of predictions made with       the CNN and the Vision Transformer, and provides a walkthrough of multiple development steps, including data preparation, training, and testing of the models. A section comparing both models is also being developed.
     
@@ -17,7 +17,7 @@ Develop a model that, given any RGB image of a traffic sign, can classify it int
     ![Comparison Between Models](https://github.com/alvaroqsaldanha/Traffic-Sign-Classification/blob/main/DataProfiling/templateimgComparison.PNG)
 
 2) Traffic Sign Detection - in development <br /> 
-Develop another model that, given an image, detects the presence of a traffic sign and give its pixel coordinates, allowing for posterior classification. Currently, I plan to use a Yolo-based approach to this section.
+Another model that, given an image, detects the presence of a traffic sign and give its pixel coordinates, allowing for posterior classification. Currently, I plan to use a Yolo-based approach to this section.
 
 3) Web-app <br />
 Deploy a web-app, using Flask or Django, that allows the user to upload an image and run the models.
