@@ -1,5 +1,5 @@
 # Traffic-Sign-Classification
-A deep-learning traffic sign detection and recognition project, using convolutional neural networks and vision transformers, with PyTorch over the [GTSRB - German Traffic Sign](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign?resource=download). 
+A deep-learning traffic sign detection and recognition project, using convolutional neural networks and vision transformers, with PyTorch and OpenCV over the [GTSRB - German Traffic Sign](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign?resource=download). 
 
 There are three main components currently planned for this project:
 
